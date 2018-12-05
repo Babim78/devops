@@ -1,0 +1,5 @@
+---
+# vars file for gitlab
+gitlab_config_dir: "/srv/gitlab/config"
+gitlab_logs_dir: "/srv/gitlab/logs"
+gitlab_data_dir: "/srv/gitlab/data"

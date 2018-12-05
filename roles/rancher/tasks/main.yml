@@ -1,0 +1,16 @@
+---
+# tasks file for rancher
+
+- name: pull an image gitlab
+  docker_image:
+    name: rancher/rancher
+
+- name: start rancher
+  docker_container:
+    name: rancher
+    image: rancher/server
+    state: started
+    restart: yes
+    ports:
+      - 8080:8080
+      - 7443:443

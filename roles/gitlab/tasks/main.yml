@@ -1,0 +1,20 @@
+---
+# tasks file for gitlab
+- name: pull an image gitlab
+  docker_image:
+     name: gitlab/gitlab-ce
+
+- name: start gitlab-ce 
+  docker_container: 
+    hostname: git.marc.org
+    name: gitlab
+    image: gitlab/gitlab-ce
+    state: started
+    restart: yes 
+    ports: 
+      - 4430:443
+      - 8000:80
+    volumes: 
+      -/srv/config:/etc/gitlab
+      -/srv/log/:/var/log/gitlab      
+      -/srv/data:/var/opt/gitlab

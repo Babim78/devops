@@ -1,0 +1,13 @@
+- name: "creation repertoire {{ item }}"
+  file: path=/home/{{ user }}/{{ item }} state=directory
+
+- name: creation du symlink
+  file: src=/home/{{ user }}/{{ item }} dest=/var/www/html/{{ item }} state=link
+
+- name: "configuration du site {{ item }}"
+  template: src=/etc/ansible/templates/nginx.j2 dest=/etc/nginx/sites-available/{{ item }} force=yes
+  notify: service nginx
+
+- name: "activation site {{ item }}"
+  file: src=/etc/nginx/sites-available/{{ item }} dest=/etc/nginx/sites-enabled/{{ item }} state=link
+  notify: service nginx

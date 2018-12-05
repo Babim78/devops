@@ -1,0 +1,9 @@
+---
+# tasks file for user
+- name: creation user
+  user: name={{ user }} shell=/bin/zsh
+- name : utilisation des clefs
+  authorized_key:
+   user: '{{ user }}'
+   state: present
+   key: "{{ lookup('file','/root/.ssh/id_rsa.pub') }}"

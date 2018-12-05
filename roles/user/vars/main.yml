@@ -1,0 +1,4 @@
+---
+# vars file for user
+user: dev
+domain: local.dev
