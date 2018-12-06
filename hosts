@@ -15,9 +15,10 @@
 192.168.126.139
 192.168.126.140
 [proxy]
-192.168.126.42
+192.168.126.143
 [web]
-192.168.126.43
+192.168.126.142
+[bidon]
 # Ex 1: Ungrouped hosts, specify before any group headers.
 
 ## green.example.com

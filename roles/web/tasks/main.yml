@@ -6,3 +6,9 @@
   apt: name=nginx state=present
 - name: Start
   service: name=nginx state=started
+- name: installation php
+  include: php.yml
+- name: installation mysql
+  include: mysql.yml
+- name: create database and user
+  include: data.yml

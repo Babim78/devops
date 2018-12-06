@@ -1,0 +1,9 @@
+- name: create data base 
+  mysql_db: 
+    name: 'trappes'
+    state: present
+- mysql_user:
+    name: bob
+    password: 12345
+    priv: '*.*:ALL'
+    state: present
